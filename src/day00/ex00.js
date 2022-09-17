@@ -4,8 +4,11 @@
  */
 
 const ft_putChar = (char) => {
-  const length = char.length;
-  if (length === 1) return char;
+  if (typeof char === "string") {
+    const length = char.length;
+    if (length === 1) return char;
+  }
+
   return "Param is not char";
 };
 
@@ -16,7 +19,7 @@ const ex00 = (req, res) => {
    */
   const char = req.body.char;
   const data = ft_putChar(char);
-  return res.json(ft_putChar(data));
+  return res.json(data);
 };
 
 module.exports = { ft_putChar, ex00 };
