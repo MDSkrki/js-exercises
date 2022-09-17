@@ -1,4 +1,7 @@
-const express = require("express");
-const router = express.Router();
+const router = require("express").Router();
+const { healthCheck } = require("./healthcheck");
 
-router.use("/health");
+// Common Healthcheck endpoint
+router.get("/health", healthCheck);
+
+module.exports = router;
