@@ -3,6 +3,8 @@
  * Extra: make sure it only returns if function recieves a character!
  */
 
+const { success } = require("../config/http");
+
 const ft_putChar = (char) => {
   if (typeof char === "string") {
     const length = char.length;
@@ -13,13 +15,13 @@ const ft_putChar = (char) => {
 };
 
 // Controller middleware for the express server to execute
-const ex00 = (req, res) => {
+const ex00 = (req, res, next) => {
   /**
    *  @param {"char": string}
    */
   const char = req.body.char;
   const data = ft_putChar(char);
-  return res.json(data);
+  return next(success(data));
 };
 
 module.exports = { ft_putChar, ex00 };
