@@ -7,8 +7,12 @@ const { success } = require("../config/http");
 
 const ft_putChar = (char) => {
   if (typeof char === "string") {
-    const length = char.length;
-    if (length === 1) return char;
+    const regex = /[a-z]/gi;
+    const test = regex.test(char);
+    if (test) {
+      const length = char.length;
+      if (length === 1) return char;
+    }
   }
 
   return "Param is not char";
