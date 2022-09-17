@@ -1,4 +1,4 @@
-const ft_putChar = require("../../src/day00/ex00");
+const { ft_putChar } = require("../../src/day00/ex00");
 
 describe("Tests for day00 ex00", () => {
   it("Should return char", () => {
