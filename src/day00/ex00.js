@@ -9,4 +9,14 @@ const ft_putChar = (char) => {
   return "Param is not char";
 };
 
-module.exports = ft_putChar;
+// Controller middleware for the express server to execute
+const ex00 = (req, res) => {
+  /**
+   *  @param {"char": string}
+   */
+  const char = req.body.char;
+  const data = ft_putChar(char);
+  return res.json(ft_putChar(data));
+};
+
+module.exports = { ft_putChar, ex00 };
