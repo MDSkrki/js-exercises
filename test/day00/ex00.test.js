@@ -20,4 +20,14 @@ describe("Tests for day00 ex00", () => {
     expect(data).not.toBe(param);
     expect(data).not.toHaveLength(1);
   });
+
+  it("Should throw error when param is not string", () => {
+    // Arrange
+    const param = ["2"];
+    // Act
+    const data = ft_putChar(param);
+    // Assert
+    expect(data).not.toBe(param);
+    expect(data).not.toHaveLength(1);
+  });
 });
